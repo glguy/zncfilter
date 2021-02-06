@@ -94,7 +94,7 @@ void CMyFilter::OnAddFilter(CString const& args)
 
 void CMyFilter::OnDelFilter(CString const& args)
 {
-	unsigned long i = args.ToULong() - 1;
+	unsigned long i = args.Token(1).ToULong() - 1;
 	if (i < entries.size()) {
 		entries.erase(entries.begin() + i);
 		PutModule("Filter removed.");
